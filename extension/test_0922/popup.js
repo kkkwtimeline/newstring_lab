@@ -21,9 +21,34 @@ function naver_contents_extraction(results){
     document.querySelector('#contents').value=results;
 }
 
+function api_server_send(e){
+    var params = {
+        "article_ulr":document.querySelector('#url').value,
+        "title":document.querySelector('#title').value,
+        "contents":document.querySelector('#contents').value
+    };
+
+    url='https://newsstring.run.goorm.io/';
+
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', url);
+    
+    for (var key in params) {
+        var hiddenField = document.createElement('input');
+        hiddenField.setAttribute('type', 'hidden');
+        hiddenField.setAttribute('name', key);
+        hiddenField.setAttribute('value', params[key]);
+        form.appendChild(hiddenField);
+    }
+    document.body.appendChild(form);
+    form.submit();
+}
+
 
 document.addEventListener('DOMContentLoaded',function(){
     var btn01 = document.querySelector('#btn');
+    var extraction_01 = document.querySelector('#extraction');
     btn01.addEventListener("click",extraction); // 기사획득 버튼 누르면 실행
-
+    extraction_01.addEventListener("click",api_server_send);
 });
