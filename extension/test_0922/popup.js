@@ -1,7 +1,7 @@
 
 function extraction(e){
 
-    chrome.tabs.executeScript({code:"document.location.href;"},url_extraction);
+    chrome.tabs.executeScript({code:"document.location.href;"},url_extraction);// 나중에 신문사별 다른 양식에 맞게 필드 지정하기 위해 url 획득.
 
     chrome.tabs.executeScript({code:"document.querySelector('#articleTitle').innerText;"},naver_title_extraction);
     // 익스텐션 창이아닌 크롬 창의 필드에서 타이틀 획득 후 naver_title_extraction함수로 전달/호출
