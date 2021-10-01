@@ -137,6 +137,9 @@ function similar_newspage(){
   document.getElementById("subscribe").style.display = "none";
   document.getElementById("page_1_item_01").style.display = "none";
   document.getElementById("page_1_item_02").style.display = "none";
+  document.getElementById("time_lines_div").style.display = "none";
+  document.getElementById("similar_items_div").style.display = "";
+  
 }
 
 function timeline_newspage(){
@@ -144,6 +147,11 @@ function timeline_newspage(){
   document.getElementById("subscribe").style.display = "none";
   document.getElementById("page_1_item_01").style.display = "none";
   document.getElementById("page_1_item_02").style.display = "none";
+  document.getElementById("similar_items_div").style.display = "none";
+  document.getElementById("time_lines_div").style.display = "";
+  chrome.tabs.create({
+    url: 'https://www.hani.co.kr/arti/international/international_general/855582.html'
+  });
 }
 
 // popup.html button EventListener

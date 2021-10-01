@@ -4,129 +4,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-  <style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body{width:400px; height:auto; margin: auto auto; background: rgb(242, 243, 244); text-align: center}
 
-    body{width:400px; height:auto; margin: auto auto; background: rgb(242, 243, 244); text-align: center}
-    
-    textarea{
-        width:350px; 
-        resize:none;/* 크기고정 */ 
-        /*resize: horizontal; // 가로크기만 조절가능 
-        resize: vertical;  세로크기만 조절가능*/
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .box1 {height:50px;}
-    
-    /* div{
-        margin-left: auto;
-        margin-right: auto;
-    } */
+        textarea{
+            width:350px; 
+            resize:none;/* 크기고정 */ 
+            /*resize: horizontal; // 가로크기만 조절가능 
+            resize: vertical;  세로크기만 조절가능*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .box1 {height:50px;}
 
-    .header{
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        border-radius:4px;
-        margin-top:10px;
-        
-        /* align-items: center; */
-    }
+        /* div{
+            margin-left: auto;
+            margin-right: auto;
+        } */
 
-    .article_title{
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        border-radius:4px;
-        height: 30px;
-        margin-top:10px;
-        
-        /* align-items: center; */
-    }
+        .header{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            border-radius:4px;
+            margin-top:10px;
+            
+            /* align-items: center; */
+        }
 
-    .naver_article{
-        display: flex;
-        border-radius:4px;
-        height: 30px;
-        
-        /* align-items: center; */
-    }
+        .article_title{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            border-radius:4px;
+            height: 30px;
+            margin-top:10px;
+            
+            /* align-items: center; */
+        }
 
-    .header_common{
-        display: inline-block;
-        width: 125px;
-        height: 65px;
-        /* border: 1px solid blue; */
-        /* margin-left: auto;
-        margin-right: auto; */
-    }
+        .naver_article{
+            display: flex;
+            border-radius:4px;
+            height: 30px;
+            
+            /* align-items: center; */
+        }
 
-    .naver_article_common{
-        display: inline-block;
-        width: 125px;
-        height: 65px;
-        /* border: 1px solid blue; */
-        /* margin-left: auto;
-        margin-right: auto; */
-    }
+        .header_common{
+            display: inline-block;
+            width: 125px;
+            height: 65px;
+            /* border: 1px solid blue; */
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
 
-    .footer_common{
-        display: inline-block;
-        width: 150px;
-        height: 50px;
-        /* border: 1px solid blue; */
-        border-radius:4px;
-        margin-top:20px;
-        /* margin-left: auto;
-        margin-right: auto; */
-    }
-  </style>
+        .naver_article_common{
+            display: inline-block;
+            width: 125px;
+            height: 65px;
+            /* border: 1px solid blue; */
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .footer_common{
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            /* border: 1px solid blue; */
+            border-radius:4px;
+            margin-top:20px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .item{
+            display: inline-block;
+            background-color: #B3B6B7;
+            width: 150px;
+            height: 50px;
+            /* border: 1px solid blue; */
+            border-radius:4px;
+            margin-top:20px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+    </style>
 </head>
 <body>
-  <div class="header" style="margin-left:10px;margin-right:10px;">
-      <div class="header header_common" style=margin-left:auto></div>
-      <div class="header header_common"><h1>NewString</h1></div>
-      <div class="header header_common" style=margin-right:auto;>
-          <!-- <input type="button" value="구독" id="extraction" style=position:relative;top:40px;> -->
-      </div>
-  </div>
+    <div class="header" style="margin-left:10px;margin-right:10px;">
+        <div class="header header_common" style=margin-left:auto></div>
+        <div class="header header_common"><h1>NewString</h1></div>
+        <div class="header header_common" style=margin-right:auto;>
+            <!-- <input type="button" value="구독" id="extraction" style=position:relative;top:40px;> -->
+        </div>
+    </div>
     
-  <div class="naver_article" style="margin-left:10px;margin-right:10px;" id="page_1_item_01"><!--맨처음 페이지에서만 사용-->
-      <div id="test_show" class="naver_article naver_article_common" style="text-align:left">
-          <h2 style="color:blue">현재기사</h3>
-      </div>
-      <div class="naver_article naver_article_common"></div>
-      <div class="naver_article naver_article_common">
-          <button type="button" id="subscribe" class="sub" style=position:relative;top:10px;left:30px;font-size:1px; value="구독">구독</button>
-          <button type="button" id="unsubscribe" class="sub" style=position:relative;top:10px;left:30px;font-size:1px;display:none; value="구독취소">✔</button>
-      </div>
-  </div>
+    <div class="naver_article" style="margin-left:10px;margin-right:10px;" id="page_1_item_01"><!--맨처음 페이지에서만 사용-->
+        <div id="test_show" class="naver_article naver_article_common" style="text-align:left">
+            <h2 style="color:blue">현재기사</h3>
+        </div>
+        <div class="naver_article naver_article_common"></div>
+        <div class="naver_article naver_article_common">
+            <button type="button" id="subscribe" class="sub" style=position:relative;top:10px;left:30px;font-size:1px; value="구독">구독</button>
+            <button type="button" id="unsubscribe" class="sub" style=position:relative;top:10px;left:30px;font-size:1px;display:none; value="구독취소">✔</button>
+        </div>
+    </div>
 
-  <div class="article_title" style="margin-left:10px;margin-right:10px;margin-top:20px;" id="page_1_item_02"><!--맨처음 페이지에서만 사용-->
-      <div>
-          <span id="title" class="title_text"></span>
-      </div>
-      <textarea id="url" style=display:none>기사를 보는 웹</textarea>
-      <textarea id="contents" style=display:none>기사 내용</textarea>
-      <textarea id="time" style=display:none>기사 작성시간</textarea>
-  </div> 
+    <div class="article_title" style="margin-left:10px;margin-right:10px;margin-top:20px;" id="page_1_item_02"><!--맨처음 페이지에서만 사용-->
+        <div>
+            <span id="title" class="title_text"></span>
+        </div>
+        <textarea id="url" style=display:none>기사를 보는 웹</textarea>
+        <textarea id="contents" style=display:none>기사 내용</textarea>
+        <textarea id="time" style=display:none>기사 작성시간</textarea>
+    </div> 
+    
+    <div class='similar_items' id="similar_items_div" style=display:none>
+        <h2>유사기사</h2>
+        <div class="similar_items item" style=margin-right:auto>
+            
+        </div>
+
+        <div class="similar_items item" style=margin-right:auto>
+
+        </div>
+
+        <div class="similar_items item" style=margin-right:auto>
+
+        </div>
+
+        <div class="similar_items item" style=margin-right:auto>
+
+        </div>
+    </div>
+
+    <div class='time_lines' id="time_lines_div" style=display:none>
+        <h2>타임라인</h2>
+        <div class="time_lines item" style=margin-right:auto>
+
+        </div>
+
+        <div class="time_lines item" style=margin-right:auto>
+
+        </div>
+
+        <div class="time_lines item" style=margin-right:auto>
+
+        </div>
+
+        <div class="time_lines item" style=margin-right:auto>
+
+        </div>
+    </div>
+
+    <div class='footer' id="footer_btn_div">
+        <div class="footer footer_common" style=margin-right:auto>
+        <!-- <input type="button" value="타임라인" id="time_line"> -->
+            <button type="button" id="time_line">타임라인</button>
+        </div>
+
+        <div class="footer footer_common" style=margin-left:auto>
+            <button type="button" id="similar_articles">유사기사</button>
+        </div>
+    </div>
+
     
 
-  <div class='footer' id="footer_btn_div">
-      <div class="footer footer_common" style=margin-right:auto>
-          <!-- <input type="button" value="타임라인" id="time_line"> -->
-          <button type="button" id="time_line">타임라인</button>
-
-      </div>
-      
-      <div class="footer footer_common" style=margin-left:auto>
-          <button type="button" id="similar_articles">유사기사</button>
-      </div>
-  </div>
-
-  <script src="popup2.js"></script>
+    <script src="popup2.js"></script>
 </body>
 </html>
