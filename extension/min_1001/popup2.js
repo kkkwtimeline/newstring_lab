@@ -149,8 +149,20 @@ function timeline_newspage(){
   document.getElementById("page_1_item_02").style.display = "none";
   document.getElementById("similar_items_div").style.display = "none";
   document.getElementById("time_lines_div").style.display = "";
+  // chrome.tabs.create({
+  //   url: 'https://www.hani.co.kr/arti/international/international_general/855582.html'
+  // });
+}
+
+function open_similar(){
   chrome.tabs.create({
-    url: 'https://www.hani.co.kr/arti/international/international_general/855582.html'
+    url: 'https://www.naver.com/'
+  });
+}
+
+function open_time_list(){
+  chrome.tabs.create({
+    url: 'https://www.daum.net/'
   });
 }
 
@@ -168,12 +180,16 @@ function listener() {
       var similar_articles_01 = document.querySelector('#similar_articles');
       var time_line_01 = document.querySelector('#time_line');
       var subscribe_01 = document.querySelector('#subscribe');
+      var open_web_similar_01 = document.querySelector('#open_web_similar');
+      var open_web_time_line_01 = document.querySelector('#open_web_time_line');
+
 
       subscribe_01.addEventListener("click", api_server_send, false); // 기사획득 버튼 누르면 실행.addEventListener("click",api_server_send); // 기사획득 버튼 누르면 실행
       unsubscribe_01.addEventListener("click",unsubscribe_click); // 구독버튼 비활성화 구독취소 활성화("✔")
       similar_articles_01.addEventListener("click",similar_newspage); // 나머지 페이지에서 사용하는 div를 전부 숨김 유사기사 페이지에서 사용하는 div만 표출
       time_line_01.addEventListener("click",timeline_newspage); // 나머지 페이지에서 사용하는 div를 전부 숨김 타임라인 페이지에서 사용하는 div만 표출
-      
+      open_web_similar_01.addEventListener("click",open_similar);
+      open_web_time_line_01.addEventListener("click",open_time_list);
 
      
     },
