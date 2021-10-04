@@ -9,100 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <style>
-        body{width:400px; height:auto; margin: auto auto; background: rgb(242, 243, 244); text-align: center}
 
-        textarea{
-            width:350px; 
-            resize:none;/* 크기고정 */ 
-            /*resize: horizontal; // 가로크기만 조절가능 
-            resize: vertical;  세로크기만 조절가능*/
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .box1 {height:50px;}
-
-        /* div{
-            margin-left: auto;
-            margin-right: auto;
-        } */
-
-        .header{
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            border-radius:4px;
-            margin-top:10px;
-            
-            /* align-items: center; */
-        }
-
-        .article_title{
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            border-radius:4px;
-            height: 30px;
-            margin-top:10px;
-            
-            /* align-items: center; */
-        }
-
-        .naver_article{
-            display: flex;
-            border-radius:4px;
-            height: 30px;
-            
-            /* align-items: center; */
-        }
-
-        .header_common{
-            display: inline-block;
-            width: 125px;
-            height: 65px;
-            /* border: 1px solid blue; */
-            /* margin-left: auto;
-            margin-right: auto; */
-        }
-
-        .naver_article_common{
-            display: inline-block;
-            width: 125px;
-            height: 65px;
-            /* border: 1px solid blue; */
-            /* margin-left: auto;
-            margin-right: auto; */
-        }
-
-        .footer_common{
-            display: inline-block;
-            width: 150px;
-            height: 50px;
-            /* border: 1px solid blue; */
-            border-radius:4px;
-            margin-top:20px;
-            /* margin-left: auto;
-            margin-right: auto; */
-        }
-
-        .item{
-            display: inline-block;
-            background-color: #B3B6B7;
-            width: 150px;
-            height: 50px;
-            /* border: 1px solid blue; */
-            border-radius:4px;
-            margin-top:20px;
-            /* margin-left: auto;
-            margin-right: auto; */
-        }
-
-    </style>
 </head>
 <body>
     <div class="header" style="margin-left:10px;margin-right:10px;">
         <div class="header header_common" style=margin-left:auto></div>
-        <div class="header header_common"><h1>NewString</h1></div>
+        <div class="header header_common" >
+            <img src="./image/newstring_logo.png" alt="My Image" width="130" height="60" style="margin-top:4px;">
+            <!-- <h1 style="margin-top:40px;">NewString</h1> -->
+        </div>
         <div class="header header_common" style=margin-right:auto;>
             <!-- <input type="button" value="구독" id="extraction" style=position:relative;top:40px;> -->
+        </div>
+    </div>
+
+    <div class="issue" id="subscribe_name" style="display:none;">
+        <div style="text-align:left">
+            <h1 style="margin-left: 10px;">오징어게임</h1>
+            <button type="button" class="button hover3" id="unsubscribe" style="position:relative;bottom:44px;right:15px;float:right;font-size:1px" value="구독">구독중</button>
+        </div>
+        <div style="display: flex;position:relative;bottom:20px;margin-left: 20px;">
+            <h6>구독자 : </h6><h6>123</h6><h6>명</h6>
         </div>
     </div>
     
@@ -112,8 +39,8 @@
         </div>
         <div class="naver_article naver_article_common"></div>
         <div class="naver_article naver_article_common">
-            <button type="button" id="subscribe" class="sub" style=position:relative;top:10px;left:30px;font-size:1px; value="구독">구독</button>
-            <button type="button" id="unsubscribe" class="sub" style=position:relative;top:10px;left:30px;font-size:1px;display:none; value="구독취소">✔</button>
+            <button type="button" id="subscribe" class="button hover3" style=position:relative;top:10px;left:30px;font-size:1px; value="구독">구독</button>
+            <button type="button" class="button hover3" id="view_check_b" style=position:relative;top:10px;left:30px;font-size:1px;display:none; value="구독취소">✔</button>
         </div>
     </div>
 
@@ -121,27 +48,33 @@
         <div>
             <span id="title" class="title_text"></span>
         </div>
-        <textarea id="url" style=display:none>기사를 보는 웹</textarea>
-        <textarea id="contents" style=display:none>기사 내용</textarea>
-        <textarea id="time" style=display:none>기사 작성시간</textarea>
+        <textarea id="url">기사를 보는 웹</textarea>
+        <textarea id="contents">기사 내용</textarea>
+        <textarea id="time">기사 작성시간</textarea>
     </div> 
     
-    <div class='similar_items' id="similar_items_div" style=display:none>
+    <div id="similar_items_div" style="display:none;">
         <h2>유사기사</h2>
         <div>
-            <div class="similar_items item" style=margin-right:auto>
-            
+            <div class="items" id="s_items" onclick="div_click()">
+                <div class="show_item_top" >
+
+                    <img src="https://mimgnews.pstatic.net/image/upload/office_logo/028/2017/12/27/logo_028_38_20171227162327.png" style="border-radius:10px;float:left;">
+                </div>
+                <div class="show_item_bottom">
+                    <h4>이음새 확 줄인 제네시스 전기차 “기대보다 별로”-“실물이 나아”</h4>
+                </div>
             </div>
     
-            <div class="similar_items item" style=margin-right:auto>
+            <div class="items">
     
             </div>
     
-            <div class="similar_items item" style=margin-right:auto>
+            <div class="items">
     
             </div>
     
-            <div class="similar_items item" style=margin-right:auto>
+            <div class="items">
     
             </div>
         </div>
@@ -150,24 +83,30 @@
         </div>
     </div>
 
-    <div class='time_lines' id="time_lines_div" style=display:none>
+    <div id="time_lines_div" style=display:none>
         <h2>타임라인</h2>
         <div>
-            <div class="time_lines item" style=margin-right:auto>
+            <div class="items" id="t_items" onclick="div_click()">
+                <div class="show_item_top" >
+                    <img src="https://mimgnews.pstatic.net/image/upload/office_logo/028/2017/12/27/logo_028_38_20171227162327.png" style="border-radius:10px;float:left;">
+                </div>
+                <div class="show_item_bottom">
+                    <h4>이음새 확 줄인 제네시스 전기차 “기대보다 별로”-“실물이 나아”</h4>
+                </div>
+            </div>
 
-            </div>
-    
-            <div class="time_lines item" style=margin-right:auto>
+            <div class="items">
     
             </div>
     
-            <div class="time_lines item" style=margin-right:auto>
+            <div class="items">
     
             </div>
     
-            <div class="time_lines item" style=margin-right:auto>
+            <div class="items">
     
             </div>
+
         </div>
 
         <div>

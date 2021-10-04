@@ -98,8 +98,13 @@ function naver_title_extraction(results){
   document.querySelector('#time').value=results.articleTime;
 }
 
+
+
 // 구독 버튼 클릭시 서버로 정보 전달
 function api_server_send(e){
+  document.getElementById("subscribe").style.display = "none";
+  document.getElementById("view_check_b").style.display = "";
+  
   const params = {
       "article_url":document.querySelector('#url').value,
       "title":document.querySelector('#title').value,
@@ -118,9 +123,16 @@ function api_server_send(e){
   fetch(url, options)
     .then((response) => response.json())
     .then((data) => showArticleInfoFromApi(data));
+
+
+  setTimeout(function() {
+    document.getElementById("view_check_b").style.display = "none";
+    document.getElementById("unsubscribe").style.display = "";
+    document.getElementById("subscribe_name").style.display = "";
+  }, 1500);
+  setTimeout();
+
   
-  document.getElementById("subscribe").style.display = "none";
-  document.getElementById("unsubscribe").style.display = "";
   // var extraction_btn = document.querySelector('#extraction')
 
   // extraction_btn.value="✔"
@@ -128,9 +140,12 @@ function api_server_send(e){
 
 
 function unsubscribe_click() {
-  document.getElementById("unsubscribe").style.display = "none";
-  document.getElementById("subscribe").style.display = "";
-  }
+  setTimeout(function() {
+    document.getElementById("subscribe_name").style.display = "none";
+    document.getElementById("subscribe").style.display = "";
+  }, 2000);
+  setTimeout();
+}
 
 function similar_newspage(){
   document.getElementById("unsubscribe").style.display = "none";
@@ -156,14 +171,18 @@ function timeline_newspage(){
 
 function open_similar(){
   chrome.tabs.create({
-    url: 'https://www.naver.com/'
+    url: 'http://newsstring.run.goorm.io/time_line/'
   });
 }
 
 function open_time_list(){
   chrome.tabs.create({
-    url: 'https://www.daum.net/'
+    url: 'http://newsstring.run.goorm.io/time_line/'
   });
+}
+
+function div_click(){
+	alert("div 클릭");
 }
 
 // popup.html button EventListener
@@ -182,7 +201,9 @@ function listener() {
       var subscribe_01 = document.querySelector('#subscribe');
       var open_web_similar_01 = document.querySelector('#open_web_similar');
       var open_web_time_line_01 = document.querySelector('#open_web_time_line');
-
+      var s_items01 = document.querySelector('#s_items');
+      var t_items01 = document.querySelector('#t_items');
+      
 
       subscribe_01.addEventListener("click", api_server_send, false); // 기사획득 버튼 누르면 실행.addEventListener("click",api_server_send); // 기사획득 버튼 누르면 실행
       unsubscribe_01.addEventListener("click",unsubscribe_click); // 구독버튼 비활성화 구독취소 활성화("✔")
@@ -190,6 +211,8 @@ function listener() {
       time_line_01.addEventListener("click",timeline_newspage); // 나머지 페이지에서 사용하는 div를 전부 숨김 타임라인 페이지에서 사용하는 div만 표출
       open_web_similar_01.addEventListener("click",open_similar);
       open_web_time_line_01.addEventListener("click",open_time_list);
+      s_items01.addEventListener("click",div_click);
+      t_items01.addEventListener("click",div_click);
 
      
     },
