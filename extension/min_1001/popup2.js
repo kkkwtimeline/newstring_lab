@@ -129,6 +129,7 @@ function api_server_send(e){
     document.getElementById("view_check_b").style.display = "none";
     document.getElementById("unsubscribe").style.display = "";
     document.getElementById("subscribe_name").style.display = "";
+    document.getElementById("footer_btn_div").style.display = "";
   }, 1500);
   setTimeout();
 
