@@ -172,19 +172,16 @@ function timeline_newspage(){
 
 function open_similar(){
   chrome.tabs.create({
-    url: 'http://newsstring.run.goorm.io/time_line/'
+    url: 'https://newsstring.run.goorm.io/'
   });
 }
 
 function open_time_list(){
   chrome.tabs.create({
-    url: 'http://newsstring.run.goorm.io/time_line/'
+    url: 'https://newsstring.run.goorm.io/timeline/1'
   });
 }
 
-function div_click(){
-	alert("div 클릭");
-}
 
 // popup.html button EventListener
 function listener() {
