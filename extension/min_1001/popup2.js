@@ -84,10 +84,10 @@ function createHeadlineDiv(data) {
   document.body.appendChild(titleDiv);
 }
 
-function showArticleInfoFromApi(data) {
-  createIdDiv(data);
-  createHeadlineDiv(data);
-}
+// function showArticleInfoFromApi(data) {
+//   createIdDiv(data);
+//   createHeadlineDiv(data);
+// }
 
 // 익스텐션 켜지자마자 페이지의 url, title, 기사작성 시간 획득
 function naver_title_extraction(results){
@@ -130,7 +130,7 @@ function api_server_send(e){
     document.getElementById("unsubscribe").style.display = "";
     document.getElementById("subscribe_name").style.display = "";
     document.getElementById("footer_btn_div").style.display = "";
-  }, 1500);
+  }, 1000);
   setTimeout();
 
   
@@ -143,13 +143,18 @@ function api_server_send(e){
 function unsubscribe_click() {
   setTimeout(function() {
     document.getElementById("subscribe_name").style.display = "none";
+    document.getElementById("time_lines_div").style.display = "none";
+    document.getElementById("similar_items_div").style.display = "none";
+    document.getElementById("footer_btn_div").style.display = "none";
     document.getElementById("subscribe").style.display = "";
-  }, 2000);
+    document.getElementById("page_1_item_01").style.display = "";
+    document.getElementById("page_1_item_02").style.display = "";
+  }, 1000);
   setTimeout();
 }
 
 function similar_newspage(){
-  document.getElementById("unsubscribe").style.display = "none";
+  document.getElementById("unsubscribe").style.display = "";
   document.getElementById("subscribe").style.display = "none";
   document.getElementById("page_1_item_01").style.display = "none";
   document.getElementById("page_1_item_02").style.display = "none";
@@ -159,7 +164,7 @@ function similar_newspage(){
 }
 
 function timeline_newspage(){
-  document.getElementById("unsubscribe").style.display = "none";
+  document.getElementById("unsubscribe").style.display = "";
   document.getElementById("subscribe").style.display = "none";
   document.getElementById("page_1_item_01").style.display = "none";
   document.getElementById("page_1_item_02").style.display = "none";
