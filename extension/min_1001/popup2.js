@@ -96,6 +96,7 @@ function naver_title_extraction(results){
   let x = document.getElementsByClassName("title_text")[0];
   x.innerText=results.articleHeadline; 
   document.querySelector('#time').value=results.articleTime;
+
 }
 
 
@@ -142,7 +143,7 @@ function api_server_send(e){
 
 function unsubscribe_click() {
   setTimeout(function() {
-    document.getElementById("subscribe_name").style.display = "none";
+    document.getElementById("unsubscribe").style.display = "none";
     document.getElementById("time_lines_div").style.display = "none";
     document.getElementById("similar_items_div").style.display = "none";
     document.getElementById("footer_btn_div").style.display = "none";
@@ -177,7 +178,7 @@ function timeline_newspage(){
 
 function open_similar(){
   chrome.tabs.create({
-    url: 'https://newsstring.run.goorm.io/'
+    url: 'https://newsstring.run.goorm.io/timeline/1'
   });
 }
 
@@ -187,6 +188,13 @@ function open_time_list(){
   });
 }
 
+function load_subscribe(){
+  setTimeout(function() {
+    document.getElementById("subscribe_start").style.display = "None";
+    document.getElementById("subscribe_name").style.display = "";
+  }, 1000);
+  
+}
 
 // popup.html button EventListener
 function listener() {
@@ -196,6 +204,9 @@ function listener() {
       
       chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, " ", naver_title_extraction);
+        load_subscribe()
+        
+      
       });
       
       var unsubscribe_01 = document.querySelector('#unsubscribe');
