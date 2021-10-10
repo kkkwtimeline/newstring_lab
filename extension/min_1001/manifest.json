@@ -20,5 +20,11 @@
     ],
     "host_permissions": [
         "*://*.naver.com/*"
-      ]
+    ],
+    "icons": { 
+        "16": "./icon/logo_16_icon.png",
+        "48": "./icon/logo_48_icon.png",
+       "128": "./icon/logo_128_icon.png"
+    }
+
 }
