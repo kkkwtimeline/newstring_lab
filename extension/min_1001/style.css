@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
 :root {
   --button-color: rgb(0, 0, 0);
@@ -8,7 +9,8 @@
 }
 
 div {
-    font-family: 'Sunflower', sans-serif;
+    /* font-family: 'Sunflower', sans-serif; */
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 button {
@@ -22,7 +24,8 @@ button {
     margin: 0;
     padding: 0.5rem 1rem;
 
-    font-family: 'Sunflower', sans-serif;
+    /* font-family: 'Sunflower', sans-serif; */
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
@@ -76,6 +79,15 @@ button.hover4:hover{
   color: cornsilk;
 }
 
+button.hover5:hover{
+  box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset,
+      0 -80px 0 0 rgba(0,0,0,0.25) inset;
+  --button-bg-color: #ffc107;
+  --button-hover-bg-color: #e0a800;
+  color: cornsilk;
+  --button-color: #212529;
+}
+
 body{
   width:400px;
   height:auto;
@@ -112,6 +124,14 @@ textarea{
   display: flex;
   border-radius:4px;
   height: 30px;
+  
+  /* align-items: center; */
+}
+
+.detail{
+  margin-top: 10px;
+  border-radius:4px;
+  text-align: center;
   
   /* align-items: center; */
 }
@@ -175,3 +195,34 @@ textarea{
   margin-top:20px;
   margin-bottom: -30px;
 }
+.detail_button{
+  color:gray;
+  background:rgb(242, 243, 244);
+  position:relative;
+  float:left;
+  font-size:1px;
+  box-shadow: none;
+}
+
+.detail_choice_button{
+  text-align: center;
+  float:left;
+  background:#ffffff;
+  font-size:1px;
+  width: 47%;
+  box-shadow: none;
+  border-radius:10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+
+.detail_timeline{
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 30px;
+  border-radius:10px;
+  margin-bottom: 10px;
+}
+

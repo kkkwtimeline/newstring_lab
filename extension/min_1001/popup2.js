@@ -132,9 +132,6 @@ function api_server_send(e){
     document.getElementById("subscribe_name").style.display = "";
     document.getElementById("footer_btn_div").style.display = "";
   }, 1000);
-  setTimeout();
-
-  
   // var extraction_btn = document.querySelector('#extraction')
 
   // extraction_btn.value="✔"
@@ -151,7 +148,7 @@ function unsubscribe_click() {
     document.getElementById("page_1_item_01").style.display = "";
     document.getElementById("page_1_item_02").style.display = "";
   }, 1000);
-  setTimeout();
+
 }
 
 function similar_newspage(){
@@ -196,6 +193,38 @@ function load_subscribe(){
   
 }
 
+function open_detail_list(){
+  setTimeout(function() {
+    document.getElementById("close_detail").style.display = "";
+    document.getElementById("open_detail").style.display = "none";
+    document.getElementById("detail_page").style.display = "";
+  }, 1000);
+}
+
+function close_detail_list(){
+  document.getElementById("close_detail").style.display = "none";
+  document.getElementById("open_detail").style.display = "";
+  document.getElementById("detail_page").style.display = "none";
+}
+
+function change_title_1(){
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_1').value
+}
+
+function change_title_2(){
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_2').value
+}
+
+function change_title_3(){
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_3').value
+}
+
+function change_title_4(){
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_4').value
+}
+
+
+
 // popup.html button EventListener
 function listener() {
   document.addEventListener(
@@ -215,8 +244,13 @@ function listener() {
       var subscribe_01 = document.querySelector('#subscribe');
       var open_web_similar_01 = document.querySelector('#open_web_similar');
       var open_web_time_line_01 = document.querySelector('#open_web_time_line');
-      var s_items01 = document.querySelector('#s_items');
-      var t_items01 = document.querySelector('#t_items');
+      var open_detail_01 = document.querySelector('#open_detail');
+      var close_detail_01 = document.querySelector('#close_detail');
+
+      var open_detail_1_01 = document.querySelector('#open_detail_1');
+      var open_detail_2_01 = document.querySelector('#open_detail_2');
+      var open_detail_3_01 = document.querySelector('#open_detail_3');
+      var open_detail_4_01 = document.querySelector('#open_detail_4');
       
 
       subscribe_01.addEventListener("click", api_server_send, false); // 기사획득 버튼 누르면 실행.addEventListener("click",api_server_send); // 기사획득 버튼 누르면 실행
@@ -225,8 +259,15 @@ function listener() {
       time_line_01.addEventListener("click",timeline_newspage); // 나머지 페이지에서 사용하는 div를 전부 숨김 타임라인 페이지에서 사용하는 div만 표출
       open_web_similar_01.addEventListener("click",open_similar);
       open_web_time_line_01.addEventListener("click",open_time_list);
-      s_items01.addEventListener("click",div_click);
-      t_items01.addEventListener("click",div_click);
+      open_detail_01.addEventListener("click",open_detail_list);
+      close_detail_01.addEventListener("click",close_detail_list);
+
+      open_detail_1_01.addEventListener("click",change_title_1);
+      open_detail_2_01.addEventListener("click",change_title_2);
+      open_detail_3_01.addEventListener("click",change_title_3);
+      open_detail_4_01.addEventListener("click",change_title_4);
+
+      
 
      
     },
