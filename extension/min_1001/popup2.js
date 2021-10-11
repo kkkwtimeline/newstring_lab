@@ -127,6 +127,8 @@ function api_server_send(e){
 
 
   setTimeout(function() {
+    document.querySelector('#subscribe_people').innerText="구독자 : 4,561 명"
+    
     document.getElementById("view_check_b").style.display = "none";
     document.getElementById("unsubscribe").style.display = "";
     document.getElementById("subscribe_name").style.display = "";
@@ -140,6 +142,7 @@ function api_server_send(e){
 
 function unsubscribe_click() {
   setTimeout(function() {
+    document.querySelector('#subscribe_people').innerText="구독자 : 4,560 명"
     document.getElementById("unsubscribe").style.display = "none";
     document.getElementById("time_lines_div").style.display = "none";
     document.getElementById("similar_items_div").style.display = "none";
