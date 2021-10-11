@@ -208,19 +208,47 @@ function close_detail_list(){
 }
 
 function change_title_1(){
-  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_1').value
+  var temp = document.querySelector('#subscribe_title').innerText
+  var temp_2 = document.querySelector('#subscribe_people').innerText
+
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_1').innerText
+  document.querySelector('#subscribe_people').innerText=document.querySelector('#open_detail_1').value
+
+  document.querySelector('#open_detail_1').value = temp_2
+  document.querySelector('#open_detail_1').innerText = temp
 }
 
 function change_title_2(){
-  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_2').value
+  var temp = document.querySelector('#subscribe_title').innerText
+  var temp_2 = document.querySelector('#subscribe_people').innerText
+
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_2').innerText
+  document.querySelector('#subscribe_people').innerText=document.querySelector('#open_detail_2').value
+
+  document.querySelector('#open_detail_2').value = temp_2
+  document.querySelector('#open_detail_2').innerText = temp
 }
 
 function change_title_3(){
-  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_3').value
+  var temp = document.querySelector('#subscribe_title').innerText
+  var temp_2 = document.querySelector('#subscribe_people').innerText
+
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_3').innerText
+  document.querySelector('#subscribe_people').innerText=document.querySelector('#open_detail_3').value
+
+  document.querySelector('#open_detail_3').value = temp_2
+  document.querySelector('#open_detail_3').innerText = temp
 }
 
 function change_title_4(){
-  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_4').value
+  var temp = document.querySelector('#subscribe_title').innerText
+  var temp_2 = document.querySelector('#subscribe_people').innerText
+
+  document.querySelector('#subscribe_title').innerText=document.querySelector('#open_detail_4').innerText
+  document.querySelector('#subscribe_people').innerText=document.querySelector('#open_detail_4').value
+
+  document.querySelector('#open_detail_4').value = temp_2
+  document.querySelector('#open_detail_4').innerText = temp
 }
 
 
